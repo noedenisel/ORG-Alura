@@ -3,12 +3,12 @@ import { useState } from "react";
 import "./miOrg.css"
 
 
-const MiOrg = () => {
+const MiOrg = (props) => {
 
     //console.log(useState());
 
     const [mostrar, actualizarMostrar] = useState(true)
-    const [nombre, actualizarNombre] = useState()
+
 
     const manejarClick = () => {
         console.log("mostrar/ocultar elemento", !mostrar);
@@ -17,8 +17,8 @@ const MiOrg = () => {
 
 
     return <section className="orgSection">
-                <h3 className="title"> Mi Organizacion {nombre}</h3>
-                <img src="/img/add.png" alt="img Add" onClick={manejarClick}></img>
+                <h3 className="title"> Mi Organizacion</h3>
+                <img src="/img/add.png" alt="img Add" onClick={props.cambiarMostrar}></img>
             </section>
 }
 
