@@ -6,6 +6,7 @@ const ListaOpciones = (props) => {
         "Programacion",
         "FrontEnd",
         "Data Science",
+        "Dveops",
         "Ux y Diseño",
         "Móvil",
         "Innovación y Gestión"
