@@ -6,7 +6,7 @@ import Boton
  from "../boton/boton.js"
 import "./formulario.css" 
 
-const Formulario = () => {
+const Formulario = (props) => {
 
     const [nombre, setNombre] = useState ("")
     const [puesto, setPuesto] =useState("")
@@ -48,7 +48,10 @@ const Formulario = () => {
                 required valor={foto} 
                 actualizarValor={setFoto}
                 />   
-            <ListaOpciones valor={equipo} actualizarEquipo={setEquipo}/>    
+            <ListaOpciones 
+                valor={equipo} 
+                actualizarEquipo={setEquipo}
+                equipos = {props.equipos}/>    
             <Boton> Crear </Boton>
         </form>
     </section>
