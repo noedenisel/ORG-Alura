@@ -92,7 +92,11 @@ function App() {
       <Equipo equipo="Innovación y Gestion"/> */}
 
       {
-        equipos.map( (equipo) =>  <Equipo datos={equipo} key={equipo.titulo}/> )
+        equipos.map( (equipo) =>  <Equipo 
+          datos = { equipo } 
+          key = { equipo.titulo }
+          colaboradores = { colaboradores }
+          /> )
       }
       
 
