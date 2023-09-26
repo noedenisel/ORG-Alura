@@ -3,8 +3,9 @@ import "./equipo.css"
 
 const Equipo = (props) => {
 
-    const {colorPrimario, colorSecundario, titulo} = props.datos
+    const { colorPrimario, colorSecundario, titulo } = props.datos
     const { colaboradores } = props
+    console.log(colaboradores.length > 0);
 
     const styleH3 =  {borderColor: colorPrimario}
 
@@ -13,16 +14,21 @@ const Equipo = (props) => {
     }
 
     
-    return <section className="equipo" style={ colorSec }>
-        <h3 style={styleH3}>{titulo}</h3>
-        <div className="colaboradores">
-            {/* <Colaborador/> */}
-            {
-                colaboradores.map( ( colaborador, index ) => <Colaborador datos = {colaborador} key = {index}/>)
-            }
-        
-        </div>
-    </section>
+    return <> 
+        { 
+            colaboradores.length > 0 &&
+                <section className="equipo" style={ colorSec }>
+                    <h3 style={styleH3}>{titulo}</h3>
+                    <div className="colaboradores">
+                        {/* <Colaborador/> */}
+                        {
+                            colaboradores.map( ( colaborador, index ) => < Colaborador datos = {colaborador} key = {index} /> )
+                        }
+
+                    </div>
+                </section>
+        }
+    </>
 }
 
 export default Equipo
