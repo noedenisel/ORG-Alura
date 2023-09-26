@@ -13,6 +13,8 @@ const Formulario = (props) => {
     const [foto, setFoto] = useState("")
     const [equipo, setEquipo] = useState("")
 
+    const {registrarColaborador} = props
+
 
     const manejarEnvio = (event) => {
         event.preventDefault()
@@ -24,7 +26,11 @@ const Formulario = (props) => {
             equipo
         }
         console.log("Datos a enviar;",datosAEnviar);
+        registrarColaborador(datosAEnviar)
     }
+
+
+
     return <section className="formulario">
         <form onSubmit={manejarEnvio}>
             <h2> Rellena el formulario para crear el colaborador</h2>

@@ -11,10 +11,16 @@ function App() {
 
   const [mostrarFormulario, actualizarMostrarFormulario] = useState(false)
 
+  const [colaboradores, setColaboradores] = useState([])
+
   const cambiarMostrar = ()=> {
     actualizarMostrarFormulario(!mostrarFormulario)
   }
   
+  const registrarColaborador = (colaborador) =>{
+    console.log("nuevo colaborador:", colaborador);
+    setColaboradores([...colaboradores, colaborador])
+  } 
 
   // ? Lista de equipos
   
@@ -69,7 +75,10 @@ function App() {
       <Header/> {/* se puede renderizar tb como ----> {Header()} */}
       {
         // mostrarFormulario === true ? <Formulario/> : <></>
-        mostrarFormulario && <Formulario equipos = {equipos.map((equipo) => equipo.titulo )}/> 
+        mostrarFormulario && <Formulario 
+          equipos = {equipos.map((equipo) => equipo.titulo )}ç
+          registrarColaborador = {registrarColaborador}
+          /> 
       }
       
       <MiOrg cambiarMostrar={cambiarMostrar}/>
