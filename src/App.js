@@ -6,6 +6,7 @@ import MiOrg from './components/MiOrg/miOrg';
 import Equipo from './components/equipo/equipo';
 
 import './App.css';
+import Footer from './components/footer/footer';
 
 function App() {
 
@@ -99,6 +100,8 @@ function App() {
           /> 
         )
       }
+
+      <Footer/>
       
 
       
