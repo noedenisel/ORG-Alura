@@ -12,7 +12,34 @@ function App() {
 
   const [mostrarFormulario, actualizarMostrarFormulario] = useState(false)
 
-  const [colaboradores, setColaboradores] = useState([])
+  const [colaboradores, setColaboradores] = useState([{
+    equipo: "FrontEnd",
+    foto: "https://github.com/noedenisel.png",
+    nombre: "Noe Denise",
+    puesto: "Dev"
+  },
+  {
+    equipo: "FrontEnd",
+    foto: "https://github.com/harlandlohora.png",
+    nombre: "Harland Lohora",
+    puesto: "Instructor"
+  },
+  {
+    equipo: "Programacion",
+    foto: "https://github.com/genesysaluralatam.png",
+    nombre: "Genesys Rondón",
+    puesto: "Desarrolladora de Software e instructora"
+  },
+  {
+    equipo: "UX y Diseño",
+    foto: "https://github.com/JeanmarieAluraLatam.png",
+    nombre: "Jeanmarie Quijada",
+    puesto: "Instructora"
+  },
+
+
+
+])
 
   const cambiarMostrar = ()=> {
     actualizarMostrarFormulario(!mostrarFormulario)
@@ -23,6 +50,10 @@ function App() {
     setColaboradores([...colaboradores, colaborador])
   } 
 
+
+  const eliminarColaborador = () => {
+    console.log("Eliminar colaborador:", eliminarColaborador);
+  }
   // ? Lista de equipos
   
   const equipos = [
@@ -97,6 +128,7 @@ function App() {
             datos = { equipo } 
             key = { equipo.titulo }
             colaboradores = { colaboradores.filter( colaborador => colaborador.equipo === equipo.titulo) }
+            eliminarColaborador = { eliminarColaborador }
           /> 
         )
       }
