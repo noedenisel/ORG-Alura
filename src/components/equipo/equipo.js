@@ -22,7 +22,7 @@ const Equipo = (props) => {
                 <section className="equipo" style={ colorSec }>
                     <input className="input-color"
                         type="color"
-                        value={hexToRgba(colorPrimario, 0.6)}
+                        value={ hexToRgba(colorPrimario, 0.6) }
                         onChange={(event) => {
                             console.log(event.target.value);
                             actualizarColor(event.target.value, titulo);

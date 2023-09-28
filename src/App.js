@@ -1,5 +1,5 @@
 import { useState } from 'react';
-
+import {v4 as uuid} from "uuid";
 import Header from './components/header/header';
 import Formulario from './components/formulario/formulario.js';
 import MiOrg from './components/MiOrg/miOrg';
@@ -47,44 +47,51 @@ function App() {
   {
       titulo: "Programacion",
       colorPrimario: "#57C278",
-      colorSecundario: "#D9F7E9" 
+      colorSecundario: "#D9F7E9" ,
+      id: uuid()
     
   },
   {
       titulo: "FrontEnd",
       colorPrimario: "#82CFFA",
-      colorSecundario: "#E8F8FF" 
+      colorSecundario: "#E8F8FF",
+      id: uuid() 
     
   },
   {
       titulo: "Data Science",
       colorPrimario: "#A6D157",
-      colorSecundario: "#F0F8E2" 
+      colorSecundario: "#F0F8E2",
+      id: uuid() 
     
   },
   {
 
       titulo: "DevOps",
       colorPrimario: "#E06B69",
-      colorSecundario: "#FDE7E8" 
+      colorSecundario: "#FDE7E8",
+      id: uuid() 
     
   },
   {
       titulo: "UX y Diseño",
       colorPrimario: "#DB6EBF",
-      colorSecundario: "#FAE9F5" 
+      colorSecundario: "#FAE9F5" ,
+      id: uuid()
 
   },
   {
       titulo: "Movil",
       colorPrimario: "#FFBA05",
-      colorSecundario: "#FFF5D9" 
+      colorSecundario: "#FFF5D9" ,
+      id: uuid()
   
   },
   {
       titulo: "Innovacion y Gestion",
       colorPrimario: "#FF8A29",
-      colorSecundario: "#FFEEDF" 
+      colorSecundario: "#FFEEDF" ,
+      id: uuid()
   }
   
 ])
