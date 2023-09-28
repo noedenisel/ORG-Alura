@@ -1,4 +1,5 @@
 import Colaborador from "../colaborador/colabordador"
+import hexToRgba from "hex-to-rgba"
 import "./equipo.css"
 
 const Equipo = (props) => {
@@ -11,7 +12,7 @@ const Equipo = (props) => {
     const styleH3 =  {borderColor: colorPrimario}
 
     const colorSec = {
-        backgroundColor: colorSecundario
+        backgroundColor: hexToRgba(colorPrimario, 0.6)
     }
 
     
@@ -21,7 +22,7 @@ const Equipo = (props) => {
                 <section className="equipo" style={ colorSec }>
                     <input className="input-color"
                         type="color"
-                        value={colorSecundario}
+                        value={hexToRgba(colorPrimario, 0.6)}
                         onChange={(event) => {
                             console.log(event.target.value);
                             actualizarColor(event.target.value, titulo);
