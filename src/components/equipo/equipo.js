@@ -4,7 +4,7 @@ import "./equipo.css"
 
 const Equipo = (props) => {
 
-    const { colorPrimario, colorSecundario, titulo } = props.datos
+    const { colorPrimario, colorSecundario, titulo, id } = props.datos
     const { colaboradores, eliminarColaborador , actualizarColor} = props
 
     // console.log(colaboradores.length > 0);
@@ -25,7 +25,7 @@ const Equipo = (props) => {
                         value={ hexToRgba(colorPrimario, 0.6) }
                         onChange={(event) => {
                             console.log(event.target.value);
-                            actualizarColor(event.target.value, titulo);
+                            actualizarColor(event.target.value, id);
                         }}
                     
                     

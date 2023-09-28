@@ -111,10 +111,10 @@ function App() {
   }
 
   //? Actualizar color de equipo
-  const actualizarColor = (color, titulo) => {
-    console.log("actualizar: ", color,  titulo);
+  const actualizarColor = (color, id) => {
+    console.log("actualizar: ", color,  id);
     const equiposActualizados = equipos.map((equipo)=>{
-      if(equipo.titulo === titulo){
+      if(equipo.id === id){
         equipo.colorPrimario = color
       }
       return equipo
@@ -131,7 +131,7 @@ function App() {
       {
         // mostrarFormulario === true ? <Formulario/> : <></>
         mostrarFormulario && <Formulario 
-          equipos = {equipos.map((equipo) => equipo.titulo )}ç
+          equipos = {equipos.map((equipo) => equipo.id )}
           registrarColaborador = {registrarColaborador}
           /> 
       }
@@ -149,7 +149,7 @@ function App() {
       {
         equipos.map( (equipo) =>  <Equipo 
             datos = { equipo } 
-            key = { equipo.titulo }
+            key = { equipo.id }
             colaboradores = { colaboradores.filter( colaborador => colaborador.equipo === equipo.titulo) }
             eliminarColaborador = { eliminarColaborador }
             actualizarColor = {actualizarColor}
