@@ -4,7 +4,7 @@ import "./equipo.css"
 const Equipo = (props) => {
 
     const { colorPrimario, colorSecundario, titulo } = props.datos
-    const { colaboradores, eliminarColaborador } = props
+    const { colaboradores, eliminarColaborador , actualizarColor} = props
 
     // console.log(colaboradores.length > 0);
 
@@ -24,6 +24,7 @@ const Equipo = (props) => {
                         value={colorSecundario}
                         onChange={(event) => {
                             console.log(event.target.value);
+                            actualizarColor(event.target.value, titulo);
                         }}
                     
                     
