@@ -19,8 +19,12 @@ const Equipo = (props) => {
         { 
             colaboradores.length > 0 &&
                 <section className="equipo" style={ colorSec }>
-                    <input
+                    <input className="input-color"
                         type="color"
+                        value={colorSecundario}
+                        onChange={(event) => {
+                            console.log(event.target.value);
+                        }}
                     
                     
                     
