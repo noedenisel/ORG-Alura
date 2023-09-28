@@ -6,7 +6,7 @@ const Equipo = (props) => {
     const { colorPrimario, colorSecundario, titulo } = props.datos
     const { colaboradores, eliminarColaborador } = props
 
-    console.log(colaboradores.length > 0);
+    // console.log(colaboradores.length > 0);
 
     const styleH3 =  {borderColor: colorPrimario}
 
@@ -19,6 +19,12 @@ const Equipo = (props) => {
         { 
             colaboradores.length > 0 &&
                 <section className="equipo" style={ colorSec }>
+                    <input
+                        type="color"
+                    
+                    
+                    
+                    />
                     <h3 style={styleH3}>{titulo}</h3>
                     <div className="colaboradores">
                         {/* <Colaborador/> */}
