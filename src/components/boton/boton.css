@@ -8,6 +8,7 @@
     color: #ffff;
     margin: 32px 0;
     cursor: pointer;
+    width: auto;
 }
 
 .boton:hover{

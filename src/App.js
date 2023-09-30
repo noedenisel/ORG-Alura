@@ -96,28 +96,28 @@ function App() {
   
 ])
 
-console.log(uuidv4);
+
 
   const cambiarMostrar = ()=> {
     actualizarMostrarFormulario(!mostrarFormulario)
   }
   
   const registrarColaborador = (colaborador) =>{
-    console.log("nuevo colaborador:", colaborador);
+    // console.log("nuevo colaborador:", colaborador);
     setColaboradores([...colaboradores, colaborador])
   } 
 
 
   const eliminarColaborador = (id) => {
-    console.log("Eliminar colaborador:", id);
+    // console.log("Eliminar colaborador:", id);
     const nuevosColaboradores = colaboradores.filter((colaborador) => colaborador.id !== id)
-    console.log(nuevosColaboradores);
+    // console.log(nuevosColaboradores);
     setColaboradores(nuevosColaboradores)
   }
 
   //? Actualizar color de equipo
   const actualizarColor = (color, id) => {
-    console.log("actualizar: ", color,  id);
+    // console.log("actualizar: ", color,  id);
     const equiposActualizados = equipos.map((equipo)=>{
       if(equipo.id === id){
         equipo.colorPrimario = color
@@ -126,6 +126,11 @@ console.log(uuidv4);
     })
 
     setEquipos(equiposActualizados)
+  }
+
+  const crearEquipo = (nuevoEquipo) => {
+    console.log(nuevoEquipo);
+    setEquipos([...equipos, {...nuevoEquipo, id: uuidv4()}])
   }
  
  
@@ -138,6 +143,7 @@ console.log(uuidv4);
         mostrarFormulario && <Formulario 
           equipos = {equipos.map((equipo) => equipo.id )}
           registrarColaborador = {registrarColaborador}
+          crearEquipo = {crearEquipo}
           /> 
       }
       
@@ -154,7 +160,6 @@ console.log(uuidv4);
       {
         equipos.map( (equipo) =>  <Equipo 
             datos = { equipo } 
-            key = { equipo.id }
             colaboradores = { colaboradores.filter( colaborador => colaborador.equipo === equipo.titulo) }
             eliminarColaborador = { eliminarColaborador }
             actualizarColor = {actualizarColor}

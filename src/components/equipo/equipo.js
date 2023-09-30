@@ -4,7 +4,7 @@ import "./equipo.css"
 
 const Equipo = (props) => {
 
-    const { colorPrimario, colorSecundario, titulo, id } = props.datos
+    const { colorPrimario, titulo, id } = props.datos
     const { colaboradores, eliminarColaborador , actualizarColor} = props
 
     // console.log(colaboradores.length > 0);

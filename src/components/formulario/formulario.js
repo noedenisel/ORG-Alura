@@ -12,23 +12,34 @@ const Formulario = (props) => {
     const [puesto, setPuesto] =useState("")
     const [foto, setFoto] = useState("")
     const [equipo, setEquipo] = useState("")
+    const [titulo, setTitulo] = useState("")
+    const [color, setColor] = useState("")
 
-    const {registrarColaborador} = props
+    const {registrarColaborador, crearEquipo} = props
 
 
     const manejarEnvio = (event) => {
         event.preventDefault()
-        console.log("Manejo de envio de form", event);
+        // console.log("Manejo de envio de form", event);
         let datosAEnviar = {
             nombre: nombre,
             puesto: puesto,
             foto: foto,
             equipo
         }
-        console.log("Datos a enviar;",datosAEnviar);
         registrarColaborador(datosAEnviar)
     }
 
+    const manejarNuevoEquipo = (event) => {
+        event.preventDefault()
+        console.log("Manejo de envio de nuevo equipo", event);
+        let datosNuevoEquipo = {
+                titulo,
+                colorPrimario: color
+        }
+        console.log("Datos a enviar;",datosNuevoEquipo);
+        crearEquipo(datosNuevoEquipo)
+    }
 
 
     return <section className="formulario">
@@ -58,8 +69,27 @@ const Formulario = (props) => {
                 valor={equipo} 
                 actualizarEquipo={setEquipo}
                 equipos = {props.equipos}/>    
-            <Boton> Crear </Boton>
+            <Boton>Crear </Boton>
         </form>
+
+        <form onSubmit={manejarNuevoEquipo}>
+            <h2> Rellena el formulario para crear el equipo</h2>
+            <CampoTexto 
+                titulo= "Titulo" 
+                placeholder = "Ingresa Titulo" 
+                valor={titulo} 
+                actualizarValor={setTitulo}
+                required 
+            />  
+            <CampoTexto 
+                color= "Color" 
+                placeholder ="Ingresar el color en hex" 
+                required 
+                valor={color} 
+                actualizarValor={setColor}
+            /> 
+                <Boton>Registrar equipo </Boton>
+                </form>
     </section>
 }
 
