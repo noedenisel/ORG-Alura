@@ -1,7 +1,9 @@
 .formulario{
     display: flex;
     justify-content: space-evenly;
-    margin: 80px 0;
+    margin: 80px 50px;
+    flex-wrap: wrap;
+    gap: 20px
 
 }
 
@@ -10,7 +12,8 @@
     background:  #F6F6F6;
     box-shadow: 7px 7px 15px  #00000014;
     border-radius: 20PX;
-    padding: 8px 100px ;
+    padding: 8px 20px ;
+    flex: 1;
 }
 
 h2 {
