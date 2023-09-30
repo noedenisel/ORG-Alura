@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import {v4 as uuid} from "uuid";
+import { v4 as uuidv4 } from 'uuid';
 import Header from './components/header/header';
 import Formulario from './components/formulario/formulario.js';
 import MiOrg from './components/MiOrg/miOrg';
@@ -12,33 +12,33 @@ function App() {
 
   const [mostrarFormulario, actualizarMostrarFormulario] = useState(false)
 
-  const [colaboradores, setColaboradores] = useState([{
-    equipo: "FrontEnd",
-    foto: "https://github.com/noedenisel.png",
-    nombre: "Noe Denise",
-    puesto: "Dev"
+  const [colaboradores, setColaboradores] = useState([
+    {
+      id: uuidv4(),
+      equipo: "FrontEnd",
+      foto: "https://github.com/noedenisel.png",
+      nombre: "Noe Denise",
+      puesto: "Dev"
   },
-  {
+  { id: uuidv4(),
     equipo: "FrontEnd",
     foto: "https://github.com/harlandlohora.png",
     nombre: "Harland Lohora",
     puesto: "Instructor"
   },
   {
+    id: uuidv4(),
     equipo: "Programacion",
     foto: "https://github.com/genesysaluralatam.png",
     nombre: "Genesys Rondón",
     puesto: "Desarrolladora de Software e instructora"
   },
-  {
+  { id: uuidv4(),
     equipo: "UX y Diseño",
     foto: "https://github.com/JeanmarieAluraLatam.png",
     nombre: "Jeanmarie Quijada",
     puesto: "Instructora"
   },
-
-
-
 ])
 
  const [equipos, setEquipos] = useState(
@@ -48,21 +48,21 @@ function App() {
       titulo: "Programacion",
       colorPrimario: "#57C278",
       colorSecundario: "#D9F7E9" ,
-      id: uuid()
+      id: uuidv4()
     
   },
   {
       titulo: "FrontEnd",
       colorPrimario: "#82CFFA",
       colorSecundario: "#E8F8FF",
-      id: uuid() 
+      id: uuidv4() 
     
   },
   {
       titulo: "Data Science",
       colorPrimario: "#A6D157",
       colorSecundario: "#F0F8E2",
-      id: uuid() 
+      id: uuidv4() 
     
   },
   {
@@ -70,31 +70,33 @@ function App() {
       titulo: "DevOps",
       colorPrimario: "#E06B69",
       colorSecundario: "#FDE7E8",
-      id: uuid() 
+      id: uuidv4() 
     
   },
   {
       titulo: "UX y Diseño",
       colorPrimario: "#DB6EBF",
       colorSecundario: "#FAE9F5" ,
-      id: uuid()
+      id: uuidv4()
 
   },
   {
       titulo: "Movil",
       colorPrimario: "#FFBA05",
       colorSecundario: "#FFF5D9" ,
-      id: uuid()
+      id: uuidv4()
   
   },
   {
       titulo: "Innovacion y Gestion",
       colorPrimario: "#FF8A29",
       colorSecundario: "#FFEEDF" ,
-      id: uuid()
+      id: uuidv4()
   }
   
 ])
+
+console.log(uuidv4);
 
   const cambiarMostrar = ()=> {
     actualizarMostrarFormulario(!mostrarFormulario)
@@ -106,8 +108,11 @@ function App() {
   } 
 
 
-  const eliminarColaborador = () => {
-    console.log("Eliminar colaborador:", eliminarColaborador);
+  const eliminarColaborador = (id) => {
+    console.log("Eliminar colaborador:", id);
+    const nuevosColaboradores = colaboradores.filter((colaborador) => colaborador.id !== id)
+    console.log(nuevosColaboradores);
+    setColaboradores(nuevosColaboradores)
   }
 
   //? Actualizar color de equipo
